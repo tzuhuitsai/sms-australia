@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>澳洲四城深度遊行程</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#f5f5f0;padding:16px;font-size:14px;color:#1a1a1a;}
+.wrap{max-width:820px;margin:0 auto;}
+.header{background:#fff;border-radius:14px;padding:16px 20px;margin-bottom:14px;border:1px solid #e5e5e0;display:flex;align-items:center;gap:12px;flex-wrap:wrap;}
+.header h1{font-size:16px;font-weight:600;flex:1;min-width:160px;}
+.header p{font-size:12px;color:#666;margin-top:2px;}
+.badges{display:flex;gap:6px;}
+.badge{background:#f5f5f0;border:1px solid #e0e0db;border-radius:8px;padding:5px 10px;text-align:center;}
+.badge b{display:block;font-size:13px;font-weight:600;}
+.badge span{font-size:10px;color:#888;}
+.city-tabs{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:12px;}
+.city-btn{padding:7px 16px;border-radius:100px;border:1.5px solid #ddd;cursor:pointer;font-size:13px;background:#fff;transition:all .15s;}
+.city-card{border-radius:12px;overflow:hidden;border:1px solid #e5e5e0;margin-bottom:12px;}
+.city-card-stripe{height:4px;}
+.city-card-body{padding:12px 16px;}
+.city-card-title{font-size:14px;font-weight:600;margin-bottom:6px;}
+.city-card-info{font-size:12px;color:#555;line-height:1.9;}
+.day-tabs{display:flex;gap:5px;flex-wrap:wrap;margin-bottom:12px;}
+.day-btn{padding:4px 10px;border-radius:8px;border:1px solid #ddd;cursor:pointer;font-size:12px;background:#fff;white-space:nowrap;transition:all .15s;}
+.day-panel{background:#fff;border-radius:12px;padding:16px;border:1px solid #e5e5e0;}
+.day-title-sub{font-size:11px;color:#888;margin-bottom:3px;}
+.day-title{font-size:15px;font-weight:600;margin-bottom:14px;}
+.tl-row{display:flex;gap:10px;align-items:flex-start;margin-bottom:8px;}
+.tl-time{min-width:40px;text-align:right;padding-top:5px;flex-shrink:0;font-size:11px;color:#888;font-variant-numeric:tabular-nums;font-weight:500;}
+.tl-col{display:flex;flex-direction:column;align-items:center;flex-shrink:0;}
+.tl-dot{width:24px;height:24px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:600;}
+.tl-line{width:1.5px;height:12px;background:#e5e5e0;margin:2px 0;}
+.tl-text{flex:1;padding:5px 10px;border-radius:8px;font-size:12.5px;line-height:1.65;min-width:0;}
+.tip{margin-top:12px;border-radius:8px;padding:9px 12px;font-size:12px;background:#fffbeb;border:1px solid #fde68a;}
+.legend{display:flex;gap:14px;justify-content:center;margin-top:10px;flex-wrap:wrap;font-size:12px;color:#666;}
+.legend-dot{width:18px;height:18px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:9px;font-weight:600;margin-right:5px;}
+</style>
+</head>
+<body>
+<div class="wrap">
+<div class="header">
+  <div style="flex:1;min-width:160px">
+    <h1>澳洲四城深度文化自然之旅</h1>
+    <p>9/22 – 10/10 &nbsp;·&nbsp; 3 人同行 &nbsp;·&nbsp; 含自駕</p>
+  </div>
+  <div class="badges">
+    <div class="badge"><b>19天</b><span>全程</span></div>
+    <div class="badge"><b>4城</b><span>路線</span></div>
+    <div class="badge"><b>人文</b><span>＋自然</span></div>
+  </div>
+</div>
+<div class="city-tabs" id="ctabs"></div>
+<div class="city-card" id="ccard"></div>
+<div class="day-tabs" id="dtabs"></div>
+<div class="day-panel" id="dpanel"></div>
+<div class="legend">
+  <span><span class="legend-dot" style="background:#d1fae5;color:#047857">食</span>餐飲</span>
+  <span><span class="legend-dot" style="background:#f0f0eb;color:#666">行</span>交通/入住</span>
+  <span class="legend-at"><span class="legend-dot" style="background:#E6F1FB;color:#185FA5">看</span>景點</span>
+</div>
+</div>
+<script>
+const C=[
+  {name:'雪梨',dates:'9/23–9/27',nights:4,ac:'#185FA5',bc:'#E6F1FB',
+   hotel:'Citadines Walker North Sydney',
+   fin:'CI 51 · 9/22 23:30 TPE → 9/23 10:00 SYD',
+   fout:'QF 728 · 9/27 09:30 SYD → 12:40 AYQ',
+   days:[
+    {d:'9/23 (三)',title:'抵達 · The Rocks · 環形碼頭',tip:'長途飛行後注意休息，以輕鬆步行為主',items:[
+      {t:'10:00',tp:'mv',x:'CI 51 抵達 SYD T1，入境 → 機場快線至 North Sydney，行李寄放'},
+      {t:'13:00',tp:'fd',x:'午餐 · 市區隨意覓食'},
+      {t:'14:00',tp:'at',x:'The Rocks 岩石區 — 澳洲最古老歐洲聚落，鵝卵石街道與殖民地建築群'},
+      {t:'16:00',tp:'at',x:'雪梨歌劇院外觀 · 環形碼頭（Circular Quay）全景攝影'},
+      {t:'17:30',tp:'at',x:'雪梨港灣大橋步行道欣賞落日'},
+      {t:'19:00',tp:'fd',x:"晚餐 · Nick's Bar &amp; Grill 或 Quay 附近海鮮"},
+    ]},
+    {d:'9/24 (四)',title:'博物館 · 植物園散步 · 歌劇院 · 曼利',tip:'博物館→植物園→歌劇院一路步行約 2km，全程風景；晚餐直接在 Manly，坐渡輪回飯店旁碼頭',items:[
+      {t:'10:00',tp:'at',x:'澳洲博物館（Australian Museum，10:00 開館，免費）— 原住民文化 + 自然史 + 恐龍展'},
+      {t:'12:00',tp:'at',x:'步行穿越 Hyde Park → The Domain → 皇家植物園（免費）— Farm Cove 眺望歌劇院'},
+      {t:'13:30',tp:'fd',x:'輕食午餐 · 植物園咖啡廳或環形碼頭'},
+      {t:'14:00',tp:'at',x:'雪梨歌劇院室內導覽（45 分鐘，需提前訂 14:00 場）— 建築師伍重設計傳奇'},
+      {t:'15:30',tp:'mv',x:'環形碼頭渡輪至曼利（30 分鐘）— 最美港灣航程'},
+      {t:'16:00',tp:'at',x:'曼利海灘散步 · Manly Corso · 海濱黃昏'},
+      {t:'18:00',tp:'fd',x:'晚餐 · Manly Wharf 碼頭餐廳（海景座位）'},
+      {t:'19:30',tp:'mv',x:'渡輪回環形碼頭 → 轉乘渡輪至 McMahons Point → 步行 8 分鐘回飯店（全程水路）'},
+    ]},
+    {d:'9/25 (五)',title:'藍山國家公園（自駕一日遊）',tip:'07:00 準時出發很重要，Google Maps 實際車程約 1:45；Scenic World 需提前線上訂票',items:[
+      {t:'07:00',tp:'mv',x:'自駕出發（M4 高速，實際約 1:45 小時）'},
+      {t:'09:00',tp:'at',x:'三姐妹岩（Three Sisters）+ Echo Point 展望台 — 侵蝕砂岩地形，壯觀山谷'},
+      {t:'10:30',tp:'at',x:'Scenic World — 世界最陡峭軌道火車 + 纜車俯瞰藍山（含排隊約 2 小時）'},
+      {t:'12:30',tp:'fd',x:'午餐 · Leura 小鎮（The Leura Garage）'},
+      {t:'14:00',tp:'at',x:'Gordon Falls Reserve 瀑布健行（輕鬆步道，約 1 小時，couple 可在 Leura 喝咖啡等）'},
+      {t:'15:30',tp:'mv',x:'返回雪梨（約 1:45 小時）'},
+      {t:'17:30',tp:'fd',x:'晚餐 · CBD 澳式牛排'},
+    ]},
+    {d:'9/26 (六)',title:'座頭鯨觀賞 · 邦迪海岸步道',tip:'雪梨賞鯨船多為 09:45 出發（訂票時確認）；9 月底目擊率高，備暈船藥',items:[
+      {t:'09:45',tp:'at',x:'座頭鯨觀賞船（環形碼頭出發，約 3 小時，AUD 85–130）— 9月母子配對族群過境'},
+      {t:'12:45',tp:'mv',x:'返回碼頭'},
+      {t:'13:00',tp:'fd',x:'午餐 · 環形碼頭附近'},
+      {t:'14:15',tp:'mv',x:'公車至邦迪海灘（約 40 分鐘）'},
+      {t:'15:00',tp:'at',x:'邦迪海岸步道 — 走至 Bronte（3km 精華段，約 1.5 小時；體力好可續走至 Coogee）'},
+      {t:'17:00',tp:'at',x:'海灘休息 · 黃昏'},
+      {t:'19:00',tp:'fd',x:'晚餐 · 達令港海鮮大餐；今晚打包行李，明早 06:00 出發'},
+    ]},
+  ]},
+  {name:'烏魯魯',dates:'9/27–9/29',nights:2,ac:'#b45309',bc:'#fef3c7',
+   hotel:'Outback Hotel &amp; Lodge',
+   fin:'QF 728 · 9/27 09:30 SYD → 12:40 AYQ',
+   fout:'JQ 665 · 9/29 12:10 AYQ → 15:25 MEL',
+   days:[
+    {d:'9/27 (日)',title:'抵達 · 文化中心 · Sounds of Silence',tip:'Sounds of Silence 需提前訂票（AUD 220/人），沙漠晚餐+天文望遠鏡+原住民故事',items:[
+      {t:'06:00',tp:'mv',x:'早起退房，搭計程車前往 SYD T3（車程約 20 分鐘，QF 728 09:30）'},
+      {t:'12:40',tp:'mv',x:'抵達 AYQ，機場取車'},
+      {t:'14:30',tp:'fd',x:'午餐 · 飯店附近'},
+      {t:'15:00',tp:'mv',x:'Check-in Outback Hotel'},
+      {t:'15:30',tp:'at',x:'烏魯魯-卡塔丘塔文化中心 — 阿南古原住民神話、世界觀與創世故事'},
+      {t:'17:30',tp:'at',x:'Talinguru Nyakunytjaku 日落觀景台 — 岩石由橘紅漸轉深紫'},
+      {t:'19:30',tp:'at',x:'Sounds of Silence 星空晚宴（AUD 220/人）— 沙漠露天晚餐 + 天文望遠鏡 + 原住民故事'},
+    ]},
+    {d:'9/28 (一)',title:'日出 · 基地步道 · 卡塔丘塔',tip:'基地步道備 2L+ 飲水、帽子、防曬；couple 可走 Mala Walk 3.5km 輕鬆版在入口會合',items:[
+      {t:'05:45',tp:'at',x:'烏魯魯日出 — 岩石在晨光中漸次變換七種色彩（couple 可自由選擇睡到自然醒）'},
+      {t:'07:30',tp:'fd',x:'早餐（返回飯店）'},
+      {t:'08:30',tp:'at',x:'烏魯魯基地步道（Base Walk 10.6km 約 3.5 小時；輕鬆版 Mala Walk 3.5km）'},
+      {t:'12:30',tp:'fd',x:'午餐 · 飯店內休息補水'},
+      {t:'14:30',tp:'mv',x:'自駕前往卡塔丘塔（約 45 分鐘）'},
+      {t:'15:30',tp:'at',x:'Walpa Gorge 步道（2.6km）— 巨型岩石峽谷'},
+      {t:'17:30',tp:'at',x:'卡塔丘塔日落觀景'},
+      {t:'19:30',tp:'fd',x:'晚餐 · Sails in the Desert Hotel'},
+    ]},
+  ]},
+  {name:'墨爾本',dates:'9/29–10/5',nights:6,ac:'#6d28d9',bc:'#ede9fe',
+   hotel:'Adina Melbourne on Flinders',
+   fin:'JQ 665 · 9/29 12:10 AYQ → 15:25 MEL T4',
+   fout:'QF 616 · 10/5 12:25 MEL T1 → 13:45 BNE',
+   days:[
+    {d:'9/29 (二)',title:'抵達 · Hosier Lane · 聯邦廣場',tip:'Adina 在 Flinders Lane，Hosier Lane 步行僅 5 分鐘',items:[
+      {t:'10:00',tp:'mv',x:'退房，前往 AYQ 機場（JQ 665 12:10）'},
+      {t:'15:25',tp:'mv',x:'抵達 MEL T4 → SkyBus 入市區（約 40 分鐘）'},
+      {t:'16:45',tp:'mv',x:'Check-in Adina on Flinders'},
+      {t:'17:30',tp:'at',x:'Hosier Lane 塗鴉巷 — 世界級街頭藝術'},
+      {t:'18:30',tp:'at',x:'Federation Square · Flinders Street Station（歷史地標）'},
+      {t:'19:30',tp:'fd',x:'晚餐 · Hardware Lane 餐廳街'},
+    ]},
+    {d:'9/30 (三)',title:'州立圖書館 · NGV · 皇家展覽館',tip:'注意：QV Market 週三公休（已排除）；市區景點間都在免費電車區內',items:[
+      {t:'09:00',tp:'fd',x:'早餐 · Degraves Street 巷弄咖啡（墨爾本經典）'},
+      {t:'10:00',tp:'at',x:'維多利亞州立圖書館 — La Trobe 八角穹頂閱覽室（10:00 開，免費，人文必看）'},
+      {t:'11:30',tp:'mv',x:'免費電車至 NGV（St Kilda Rd）'},
+      {t:'12:00',tp:'at',x:'維多利亞國立美術館 NGV（免費）— 澳洲及原住民藝術'},
+      {t:'13:45',tp:'fd',x:'午餐 · 電車至 Lygon Street 義大利街（D.O.C. 或 Tiamo）'},
+      {t:'15:00',tp:'at',x:'皇家展覽館外觀 + Carlton Gardens — 聯合國世界文化遺產，1880 年建造'},
+      {t:'15:30',tp:'at',x:'墨爾本博物館（開至 17:00）— 自然史、原住民文化展'},
+      {t:'19:00',tp:'fd',x:'晚餐 · 自煮或 CBD 簡餐（Adina 有廚房）'},
+    ]},
+    {d:'10/1 (四)',title:'大洋路全日自駕',tip:'07:00 準時出發是關鍵；每停靠點需額外 15–20 分鐘停車走路，已留緩衝；注意左駕',items:[
+      {t:'07:00',tp:'mv',x:'自駕出發（07:00 準時，不可拖延）'},
+      {t:'08:30',tp:'at',x:'Torquay + Bells Beach — 世界衝浪聖地（留 1 小時）'},
+      {t:'09:30',tp:'mv',x:'直駛 Apollo Bay（沿途海景壯觀，約 1.5 小時，Lorne 不停留）'},
+      {t:'11:00',tp:'fd',x:'Apollo Bay 提早午餐（留 1 小時）'},
+      {t:'12:00',tp:'mv',x:'往十二使徒岩（穿越 Otway 山區，約 1.5 小時）'},
+      {t:'13:30',tp:'at',x:'十二使徒岩（Twelve Apostles）— 石灰岩海蝕柱群，留 2 小時充裕欣賞'},
+      {t:'15:30',tp:'at',x:'洛克阿德峽谷（Loch Ard Gorge）— 1878 年沉船遺址（留 1 小時）'},
+      {t:'16:30',tp:'mv',x:'走內陸 Princes Hwy 返回墨爾本（約 3 小時）'},
+      {t:'19:30',tp:'fd',x:'晚餐 · CBD 簡餐'},
+    ]},
+    {d:'10/2 (五)',title:'老監獄 · Puffing Billy 蒸汽火車',tip:'老監獄 10:00 才開門；Puffing Billy 末班 14:15，需 13:15 前報到，12:15 從 CBD 出發是硬限制',items:[
+      {t:'10:00',tp:'at',x:'Old Melbourne Gaol 老監獄（10:00 開門，AUD 30）— Ned Kelly 最後關押地（留 1:45）'},
+      {t:'11:45',tp:'fd',x:'快速午餐 · CBD 外帶（30 分鐘內解決）'},
+      {t:'12:15',tp:'mv',x:'準時開車前往 Belgrave（約 55 分鐘）— 不能遲'},
+      {t:'13:15',tp:'mv',x:'抵達 Belgrave 報到（需出發前 1 小時報到）'},
+      {t:'14:15',tp:'at',x:'Puffing Billy 蒸汽火車（Belgrave → Lakeside，1 小時）— 百年木造火車穿越丹德農山谷'},
+      {t:'15:15',tp:'at',x:'Lakeside · Emerald Lake Park 散步（約 1 小時）'},
+      {t:'16:15',tp:'mv',x:'回程火車（17:10 抵 Belgrave）'},
+      {t:'17:30',tp:'mv',x:'開車返回墨爾本（約 55 分鐘）'},
+      {t:'18:45',tp:'fd',x:'晚餐 · South Yarra 或 Richmond'},
+    ]},
+    {d:'10/3 (六)',title:'悠閒早晨 · 紀念聖殿 · 企鵝遊行',tip:'企鵝遊行提前數週官網訂票；島上夜間海風大帶保暖外套；晚歸日，早上放鬆',items:[
+      {t:'09:30',tp:'fd',x:'悠閒早午餐 · Degraves St 或飯店附近（couple 可睡到自然醒）'},
+      {t:'11:00',tp:'at',x:'紀念聖殿（Shrine of Remembrance）— 一二戰紀念館，登頂俯瞰全市'},
+      {t:'13:00',tp:'fd',x:'午餐 · South Yarra 或 Prahran Market'},
+      {t:'14:15',tp:'mv',x:'自駕前往費利浦島（Google Maps 實際約 1:50–2 小時）'},
+      {t:'16:15',tp:'at',x:'The Nobbies 海岬棧道 — 壯觀海景步道，遠眺海豹岩（免費，開到日落）'},
+      {t:'17:45',tp:'fd',x:'島上簡便晚餐（Cowes 小鎮）'},
+      {t:'18:30',tp:'at',x:'小企鵝遊行（Penguin Parade）— 日落後小藍企鵝集體返岸（10/3 日落約 18:30）'},
+      {t:'20:30',tp:'mv',x:'返回墨爾本（約 2 小時，約 22:30 抵）'},
+    ]},
+    {d:'10/4 (日)',title:'南墨爾本市場 · St Kilda · Fitzroy',tip:'南墨爾本市場週日 08:00 開；96 路電車直達 St Kilda 超順；明早 09:30 前退房',items:[
+      {t:'08:30',tp:'fd',x:'南墨爾本市場早餐 — 招牌 Dim Sims、生蠔吧、熟食（週日 08:00–16:00）'},
+      {t:'10:00',tp:'mv',x:'96 路電車直達 St Kilda（約 15 分鐘）'},
+      {t:'10:15',tp:'at',x:'St Kilda — Acland Street 蛋糕街、Luna Park 1912 年老遊樂場、海濱散步'},
+      {t:'12:30',tp:'fd',x:'午餐 · St Kilda 或 Esplanade 週日市集小食'},
+      {t:'14:00',tp:'at',x:'Fitzroy — Brunswick St 獨立書店、塗鴉牆、復古店鋪'},
+      {t:'16:00',tp:'at',x:'墨爾本咖啡朝聖（Proud Mary 或 Industry Beans）'},
+      {t:'18:00',tp:'at',x:'Emporium 最後購物 · 打包行李'},
+      {t:'19:30',tp:'fd',x:'告別晚餐 · Cumulus Inc.（需提前訂位）'},
+    ]},
+  ]},
+  {name:'布里斯本',dates:'10/5–10/9',nights:4,ac:'#047857',bc:'#d1fae5',
+   hotel:'Atlas Apartments by CLLIX',
+   fin:'QF 616 · 10/5 12:25 MEL → 13:45 BNE',
+   fout:'CI 54 · 10/9 23:00 BNE → 10/10 05:40 TPE',
+   days:[
+    {d:'10/5 (一)',title:'抵達布里斯本 · South Bank',tip:'布里斯本 10 月初夏悶熱，防曬水壺必備；布里斯本只需 10/7 租車一天',items:[
+      {t:'09:30',tp:'mv',x:'退房，前往 MEL T1（QF 616 12:25）'},
+      {t:'13:45',tp:'mv',x:'抵達 BNE → 機場火車或 Uber 入市區（約 25 分鐘）'},
+      {t:'15:00',tp:'mv',x:'Check-in Atlas Apartments'},
+      {t:'16:00',tp:'at',x:'South Bank Parklands — 免費人工沙灘 Streets Beach，城市中的沙灘'},
+      {t:'18:00',tp:'at',x:'布里斯本河畔散步 · Wheel of Brisbane 黃昏'},
+      {t:'19:30',tp:'fd',x:'晚餐 · Eagle Street Pier 河畔餐廳'},
+    ]},
+    {d:'10/6 (二)',title:'博物館群 · 芒山展望台',tip:'博物館都在 South Bank 步行圈；芒山搭 Uber 約 20 分鐘（今天不用租車）',items:[
+      {t:'10:00',tp:'at',x:'昆士蘭博物館（免費）— 自然歷史、恐龍展、澳洲生態'},
+      {t:'11:30',tp:'at',x:'昆士蘭藝術館 QAG + GOMA（免費）— 澳洲及亞太藝術'},
+      {t:'13:00',tp:'fd',x:'午餐 · South Bank 文化廣場'},
+      {t:'14:30',tp:'mv',x:'Uber 或 471 公車前往芒山（約 20 分鐘）'},
+      {t:'15:00',tp:'at',x:'Mt Coot-tha 芒山展望台 — 360° 俯瞰布里斯本 + 植物園'},
+      {t:'17:00',tp:'mv',x:'返回市區'},
+      {t:'18:00',tp:'at',x:'Howard Smith Wharves 河濱黃昏 · Story Bridge 眺望'},
+      {t:'19:30',tp:'fd',x:'晚餐 · Howard Smith Wharves 河畔餐廳'},
+    ]},
+    {d:'10/7 (三)',title:'庫倫賓抱無尾熊 · 黃金海岸',tip:'已預約 10:30 抱無尾熊！07:50 出發不能晚；Google Maps 車程約 1:15；今早取車、晚上還車（單日租）',items:[
+      {t:'07:30',tp:'mv',x:'市區取租車（提前一天確認取車點營業時間）'},
+      {t:'07:50',tp:'mv',x:'出發庫倫賓（M1 高速，Google Maps 約 1:15）'},
+      {t:'09:15',tp:'at',x:'抵達庫倫賓野生動物園（提早入園逛，彩虹鸚鵡餵食）'},
+      {t:'10:30',tp:'at',x:'抱無尾熊體驗（已預約！提早 15 分鐘到集合點）'},
+      {t:'11:15',tp:'at',x:'袋鼠餵食 · 袋熊 · 野生動物醫院（園區續逛）'},
+      {t:'13:00',tp:'fd',x:'午餐 · 園內或 Currumbin 海邊'},
+      {t:'14:15',tp:'at',x:'Burleigh Heads National Park 岬角步道（車程 10 分鐘，環狀步道約 1 小時）'},
+      {t:'16:00',tp:'at',x:'Surfers Paradise 衝浪者天堂 — 3.5km 黃金沙灘'},
+      {t:'17:15',tp:'mv',x:'返回布里斯本（約 1:15，避開尖峰稍早走）'},
+      {t:'19:30',tp:'fd',x:'告別晚餐 · Aria Brisbane（需提前訂位；10/8 晚半日遊晚歸，告別餐排今晚）'},
+    ]},
+    {d:'10/8 (四)',title:'市區輕鬆日 · 春溪螢火蟲半日遊',tip:'半日遊多為 14:30 前後接送、21:30 返回，訂票時確認接送點與時間；早上可睡晚，順便打包行李',items:[
+      {t:'09:30',tp:'at',x:'早上輕鬆 — South Bank 或市區補漏（couple 可睡到自然醒）'},
+      {t:'11:30',tp:'at',x:'伴手禮採買 · Queen Street Mall（Tim Tam、麥盧卡蜂蜜）'},
+      {t:'12:30',tp:'fd',x:'午餐 · CBD'},
+      {t:'13:30',tp:'mv',x:'回飯店預先打包行李'},
+      {t:'14:30',tp:'mv',x:'春溪國家公園半日遊接送（市區集合，車程約 1:40）'},
+      {t:'16:30',tp:'at',x:'Natural Bridge 步道 — 世界遺產雨林、天然石橋瀑布'},
+      {t:'18:30',tp:'at',x:'入夜後洞穴藍光蟲（Glow Worms）— 岩壁如星空，澳洲東岸最大族群'},
+      {t:'21:30',tp:'mv',x:'返回布里斯本市區，休息'},
+    ]},
+    {d:'10/9 (五)',title:'自由放空日 · 深夜航班回家',tip:'不排行程！退房後自由活動；21:00 前抵機場辦 CI 54（23:00 起飛）',items:[
+      {t:'10:00',tp:'mv',x:'退房，行李寄放飯店'},
+      {t:'10:30',tp:'at',x:'自由活動 — 睡飽、補逛、河邊散步，完全不排行程'},
+      {t:'17:30',tp:'fd',x:'早晚餐 · CBD'},
+      {t:'19:30',tp:'mv',x:'取行李，計程車前往機場（約 25 分鐘）'},
+      {t:'21:00',tp:'mv',x:'CI 54 報到（23:00 起飛 → 10/10 05:40 抵桃園）'},
+    ]},
+  ]},
+];
+
+let ci=0,di=0;
+function dotBg(tp,ac,bc){return tp==='fd'?'#d1fae5':tp==='mv'?'#f0f0eb':bc;}
+function dotColor(tp,ac){return tp==='fd'?'#047857':tp==='mv'?'#888':ac;}
+function dotLabel(tp){return tp==='fd'?'食':tp==='mv'?'行':'看';}
+
+function render(){
+  const city=C[ci];
+  document.querySelectorAll('.city-btn').forEach((b,i)=>{
+    b.style.background=i===ci?city.bc:'#fff';
+    b.style.borderColor=i===ci?city.ac:'#ddd';
+    b.style.color=i===ci?city.ac:'#444';
+    b.style.fontWeight=i===ci?'600':'400';
+  });
+  document.getElementById('ccard').innerHTML=`
+    <div class="city-card-stripe" style="background:${city.ac}"></div>
+    <div class="city-card-body" style="background:${city.bc}">
+      <div class="city-card-title" style="color:${city.ac}">${city.name} · ${city.dates}（${city.nights} 晚）</div>
+      <div class="city-card-info">
+        <b>飯店</b>：${city.hotel}<br>
+        <b>入境</b>：${city.fin}<br>
+        <b>出境</b>：${city.fout}
+      </div>
+    </div>`;
+  const dtabs=document.getElementById('dtabs');
+  dtabs.innerHTML=city.days.map((d,i)=>`<button class="day-btn" data-di="${i}" style="background:${i===di?city.ac:'#fff'};color:${i===di?city.bc:'#666'};border-color:${i===di?city.ac:'#ddd'};font-weight:${i===di?'600':'400'}">${d.d}</button>`).join('');
+  dtabs.querySelectorAll('.day-btn').forEach(b=>b.addEventListener('click',()=>{di=+b.dataset.di;render();}));
+  const day=city.days[di];
+  const rows=day.items.map((item,idx)=>`
+    <div class="tl-row">
+      <div class="tl-time">${item.t}</div>
+      <div class="tl-col">
+        <div class="tl-dot" style="background:${dotBg(item.tp,city.ac,city.bc)};color:${dotColor(item.tp,city.ac)}">${dotLabel(item.tp)}</div>
+        ${idx<day.items.length-1?'<div class="tl-line"></div>':''}
+      </div>
+      <div class="tl-text" style="background:${item.tp==='fd'?'#f0fdf4':item.tp==='mv'?'#f5f5f0':city.bc}">${item.x}</div>
+    </div>`).join('');
+  document.getElementById('dpanel').innerHTML=`
+    <div class="day-title-sub">${day.d}</div>
+    <div class="day-title">${day.title}</div>
+    ${rows}
+    <div class="tip"><b style="color:#92400e">小提醒：</b><span style="color:#78350f">${day.tip}</span></div>`;
+  document.querySelector('.legend-at .legend-dot').style.background=city.bc;
+  document.querySelector('.legend-at .legend-dot').style.color=city.ac;
+}
+
+const ctabs=document.getElementById('ctabs');
+C.forEach((c,i)=>{
+  const b=document.createElement('button');
+  b.className='city-btn';
+  b.innerHTML=`${c.name} <span style="font-size:11px;opacity:.65">${c.dates}</span>`;
+  b.addEventListener('click',()=>{ci=i;di=0;render();});
+  ctabs.appendChild(b);
+});
+render();
+</script>
+</body>
+</html>
